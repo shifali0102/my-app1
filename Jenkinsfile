@@ -6,11 +6,15 @@ pipeline {
 
     stages {
         stage('Deploy') {
+             environment { 
+                DEBUG_FLAGS = '-g'
+            }
             steps {
                 retry(3) {
                    echo " deploying retry"
                     echo "Database engine is ${variable1}"
                     echo "running ${env.BUILD_ID}"
+                    echo "${DEBUG_FLAGS}"
                     echo "${JOB_NAME} 	${BUILD_TAG} ${EXECUTOR_NUMBER} ${NODE_NAME} ${WORKSPACE} ${JENKINS_HOME} ${JENKINS_URL} ${BUILD_URL} ${JOB_URL}"
                 }
 
