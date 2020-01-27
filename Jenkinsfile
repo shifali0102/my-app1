@@ -1,10 +1,17 @@
 pipeline {
     agent any
+      environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
+
     stages {
         stage('Deploy') {
             steps {
                 retry(3) {
                    echo " deploying retry"
+                    echo "Database engine is ${DB_ENGINE}"
+                    echo "DISABLE_AUTH is ${DISABLE_AUTH}"
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
