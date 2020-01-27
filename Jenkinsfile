@@ -9,8 +9,8 @@ pipeline {
             steps {
                 retry(3) {
                    echo " deploying retry"
-                    echo "Database engine is ${variable1}"
-                    echo ${BUILD_ID}
+                    echo "Database engine is "${variable1}""
+                    echo "${BUILD_ID}"
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
