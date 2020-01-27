@@ -16,6 +16,7 @@ pipeline {
                     echo "running ${env.BUILD_ID}"
                     echo "${DEBUG_FLAGS}"
                     echo "${JOB_NAME} 	${BUILD_TAG} ${EXECUTOR_NUMBER} ${NODE_NAME} ${WORKSPACE} ${JENKINS_HOME} ${JENKINS_URL} ${BUILD_URL} ${JOB_URL}"
+                    echo ${BRANCH_NAME}
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
