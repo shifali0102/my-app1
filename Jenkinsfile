@@ -1,8 +1,8 @@
 pipeline {
     agent any
       environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
+        variable1 = 'true'
+        variable2    = 'sqlite'
     }
 
     stages {
@@ -10,8 +10,8 @@ pipeline {
             steps {
                 retry(3) {
                    echo " deploying retry"
-                    echo "Database engine is ${DB_ENGINE}"
-                    echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                    echo "Database engine is ${variable1}"
+                    echo "DISABLE_AUTH is ${variable2}"
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
