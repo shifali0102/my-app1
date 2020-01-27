@@ -11,7 +11,7 @@ pipeline {
                    echo " deploying retry"
                     echo "Database engine is ${variable1}"
                     echo "running ${env.BUILD_ID}"
-                    echo "${JOB_NAME} 	${BUILD_TAG} "
+                    echo "${JOB_NAME} 	${BUILD_TAG} ${EXECUTOR_NUMBER} "
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
