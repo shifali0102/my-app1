@@ -1,7 +1,7 @@
 pipeline {
     agent { 
             label 'master' 
-            customWorkspace 'C:\Users\shifali.srivastava\Desktop\INFOSYS\JANUARY\Jenkins\workspace'
+            customWorkspace 'C:\\Users\\shifali.srivastava\\Desktop\\INFOSYS\\JANUARY\\Jenkins\\workspace'
     } 
       environment {
         variable1 = 'true'
