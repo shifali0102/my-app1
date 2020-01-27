@@ -1,9 +1,15 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Deploy') {
             steps {
-                sh 'mvn --version'
+                retry(3) {
+                   echo " deploying retry"
+                }
+
+                timeout(time: 3, unit: 'MINUTES') {
+                   echo "wait for timeout"
+                }
             }
         }
     }
