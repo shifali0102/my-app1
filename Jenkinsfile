@@ -13,7 +13,7 @@ pipeline {
                      bat 'gradle --version'
                   }
              }
-        stage('Gradle Version') {
+        stage('Gradle Version node') {
               agent { 
             label 'windows' 
                      } 
