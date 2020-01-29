@@ -1,6 +1,20 @@
 pipeline {
     agent none 
+    environment {
+     workspace1 = 'C:\\Users\\shifali.srivastava\\Desktop\\INFOSYS\\JANUARY\\Jenkins\\workspace'
+    }
     stages {
+        stage('checkout') {
+            agent {
+                label 'master'
+                customworkspace "${workspace1}"
+                   }
+            steps{
+                cleanWs()
+                git url: 'https://github.com/shifali0102/my-app.git'
+           
+                }
+           }
         stage('Gradle Version') {
               agent { 
                     node{
