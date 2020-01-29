@@ -6,9 +6,11 @@ pipeline {
     stages {
         stage('checkout') {
             agent {
+                node {
                 label 'master'
                 customWorkspace "${workspace1}"
                    }
+            }
             steps{
                 cleanWs()
                 git url: 'https://github.com/shifali0102/my-app.git'
