@@ -7,7 +7,7 @@ pipeline {
         stage('checkout') {
             agent {
                 label 'master'
-                customworkspace "${workspace1}"
+                customWorkspace "${workspace1}"
                    }
             steps{
                 cleanWs()
