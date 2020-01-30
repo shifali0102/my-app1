@@ -12,7 +12,7 @@ pipeline {
                    }
             }
             steps{
-                cleanWs()
+                cleanWs
                 git url: 'https://github.com/shifali0102/my-app.git'
            
                 }
